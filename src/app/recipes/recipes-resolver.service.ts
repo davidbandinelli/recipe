@@ -9,6 +9,7 @@ export class RecipesResolverService implements Resolve<Recipe[]> {
 
     constructor(private dataStorageService: DataStorageService, private recipeService: RecipeService) {}
 
+    // garantisce che per determinati url, i dati dal backend siano disponibili prima di attivare il component
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         const recipes = this.recipeService.getRecipes();
         if (recipes.length === 0) {
