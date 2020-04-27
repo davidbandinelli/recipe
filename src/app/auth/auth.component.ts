@@ -5,7 +5,6 @@ import { AlertComponent } from '../shared/alert/alert.component';
 import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { PlaceholderDirective } from '../shared/placeholder/placeholder.directive';
-import { ShoppingEditComponent } from '../shopping-list/shopping-edit/shopping-edit.component';
 
 @Component({
     selector: 'app-auth',
