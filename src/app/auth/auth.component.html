@@ -1,8 +1,17 @@
+<ng-template appPlaceholder></ng-template>
 <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-        <div class="alert alert-danger" *ngIf="error">
+        <!-- messaggio versione 1 -->
+        <!--<div class="alert alert-danger" *ngIf="error">
             <p>{{ error }}</p>
-        </div>
+        </div>-->
+        <!-- messaggio versione 2 - popup -->
+        <!--<app-alert 
+            [message]="error" 
+            *ngIf="error"
+            (closePopup)="onHandleError()">
+        </app-alert>-->
+        <!-- messaggio versione 3 - popup creato dinamicamicamente da codice -->
         <div *ngIf="isLoading" style="text-align: center;">
             <app-loading-spinner></app-loading-spinner>
         </div>
