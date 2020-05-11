@@ -1,4 +1,4 @@
-import { Ingredient } from '../shared/ingredient.module';
+import { Ingredient } from '../shared/ingredient.model';
 // import { EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
 import { NotExpr } from '@angular/compiler';
