@@ -22,7 +22,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   isLoginMode = true;
   isLoading = false;
   error: string = null;
-  @ViewChild(PlaceholderDirective, { static: false })
+  @ViewChild(PlaceholderDirective)
   alertHost: PlaceholderDirective;
 
   private closeSub: Subscription;

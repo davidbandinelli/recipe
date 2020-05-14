@@ -15,7 +15,7 @@ import * as fromApp from '../../store/app.reducer';
 })
 export class ShoppingEditComponent implements OnInit, OnDestroy {
   // template driven form
-  @ViewChild('f', { static: false }) slForm: NgForm;
+  @ViewChild('f') slForm: NgForm;
   subscription: Subscription;
   editMode = false;
   // editedItemIndex: number;
