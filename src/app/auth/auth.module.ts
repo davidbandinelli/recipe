@@ -10,8 +10,8 @@ import { SharedModule } from '../shared/shared.module';
         AuthComponent
     ],
     imports: [
-        CommonModule, 
-        FormsModule, 
+        CommonModule,
+        FormsModule,
         RouterModule.forChild(
         [
             { path: '', component: AuthComponent }

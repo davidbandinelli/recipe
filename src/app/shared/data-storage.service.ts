@@ -25,7 +25,7 @@ export class DataStorageService {
         });
     }
     */
-   
+
     fetchRecipes() {
         // unsubscribe automatico dopo una subscribe
         return this.http

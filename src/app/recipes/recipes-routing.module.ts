@@ -19,7 +19,7 @@ const routes: Routes = [
         { path: ':id/edit', component: RecipeEditComponent, resolve: [RecipesResolverService] }
       ]
     }
-]
+];
 
 
 @NgModule({

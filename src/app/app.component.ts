@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 // import { AuthService } from './auth/auth.service';
 import { LoggingService } from './logging-service';
 import * as fromApp from './store/app.reducer';
@@ -12,10 +13,17 @@ import { Store } from '@ngrx/store';
 })
 export class AppComponent implements OnInit {
   constructor(private store: Store<fromApp.AppState>,
-              private loggingService: LoggingService) {}
+              private loggingService: LoggingService,
+              @Inject(PLATFORM_ID) private platformId) {}
 
   ngOnInit() {
-    this.store.dispatch(new AuthActions.AutoLogin());
+    // used only with Angular Universal if hosted on Node.js server side
+    // (localStorage is only available in browsers)
+    // build for Angular Universal: npm run build:ssr .... npm run serve:ssr
+    // nest.js ... server side version of Angular
+    if (isPlatformBrowser(this.platformId)) {
+      this.store.dispatch(new AuthActions.AutoLogin());
+    }
     this.loggingService.printLog('Hello from AppComponent ngOnInit');
   }
 }
